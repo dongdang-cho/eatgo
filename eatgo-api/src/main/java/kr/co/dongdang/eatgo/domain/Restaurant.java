@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Restaurant {
-    
+
     private String name;
     private String address;
     private Long id;
@@ -23,13 +23,21 @@ public class Restaurant {
     public Restaurant(String name, String address) {
         this.name = name;
         this.address = address;
-        this.id = 0L;
+
     }
 
     public Restaurant(Long id, String name, String address) {
         this.id = id;
         this.name = name;
         this.address = address;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
     }
 
     public String getName() {
@@ -42,10 +50,6 @@ public class Restaurant {
 
     public String getAddress() {
         return address;
-    }
-
-    public Long getId() {
-        return id;
     }
 
     public void addMenuItem(MenuItem item) {
@@ -61,5 +65,4 @@ public class Restaurant {
             addMenuItem(menuItem);
         }
     }
-
 }
