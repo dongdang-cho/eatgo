@@ -1,10 +1,15 @@
 package kr.co.dongdang.eatgo.domain;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Restaurant {
     
     private final String name;
     private final String address;
     private final Long id;
+    private List<MenuItem> menuItems = new ArrayList<MenuItem>();
 
     public Restaurant(String name) {
         this.name = name;
@@ -39,4 +44,19 @@ public class Restaurant {
     public Long getId() {
         return id;
     }
+
+    public void addMenuItem(MenuItem item) {
+        menuItems.add(item);
+    }
+
+    public List<MenuItem> getMenuItems() {
+        return menuItems;
+    }
+
+    public void setMenuItems(List<MenuItem> menuItems) {
+        for(MenuItem menuItem : menuItems) {
+            addMenuItem(menuItem);
+        }
+    }
+
 }
